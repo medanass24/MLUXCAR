@@ -1,0 +1,854 @@
+/* Variables de Couleurs */
+:root {
+    --primary-color: #2c3e50; /* Bleu Foncé */
+    --secondary-color: #18bc9c; /* Vert Aqua */
+    --accent-color: #ecf0f1; /* Gris Clair */
+    --hover-color: #3498db; /* Bleu Moyen */
+    --text-color: #333;
+    --transition-speed: 0.3s;
+    --title-animation-duration: 2s;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    line-height: 1.6;
+}
+/* En-tête */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease; /* Ajoute une transition pour l'effet de glissement */
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInDown 1s ease-out, glow 2s infinite alternate;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: color var(--transition-speed);
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Liens des réseaux sociaux */
+.social-links {
+    display: flex;
+    justify-content: center; /* Centre les icônes horizontalement */
+    gap: 20px; /* Espacement entre les icônes */
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 24px; /* Taille des icônes */
+    color: #fff; /* Couleur par défaut des icônes */
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.social-icon:hover {
+    color: var(--secondary-color); /* Couleur au survol */
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+#about {
+    background-color: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Pour cacher les débordements */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff; /* Couleur du titre */
+    transition: color 0.3s ease;
+}
+
+.intro {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.mission, .values, .history {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.6s forwards;
+    animation-delay: 0.2s; /* Décalage d'animation */
+}
+
+.mission {
+    animation-delay: 0.3s; /* Décalage pour la mission */
+}
+
+.values {
+    animation-delay: 0.4s; /* Décalage pour les valeurs */
+}
+
+.history {
+    animation-delay: 0.5s; /* Décalage pour l'histoire */
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff; /* Couleur pour le titre */
+}
+
+.values ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left; /* Aligner les éléments de la liste à gauche */
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .mission, .values, .history {
+        flex: 1; /* Chaque section prend un espace égal */
+        margin: 0 10px; /* Ajout d'espace entre les colonnes */
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+#pricing {
+    background-color: #f1f1f1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff; /* Couleur du titre */
+}
+
+.pricing-table {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pricing-option {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-option h3 {
+    font-size: 1.8em;
+    color: #007bff; /* Couleur pour le titre */
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #28a745; /* Couleur verte pour le prix */
+}
+
+.special {
+    border: 2px solid #28a745; /* Bordure verte pour les offres spéciales */
+    background-color: #e9f5e9; /* Fond vert clair pour mettre en valeur */
+}
+
+.btn {
+    background-color: #007bff; /* Couleur du bouton */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+@media (min-width: 768px) {
+    .pricing-table {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing-option {
+        flex: 1; /* Chaque option prend un espace égal */
+        margin: 0 10px; /* Ajout d'espace entre les colonnes */
+    }
+}
+#testimonials {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff; /* Couleur du titre */
+}
+
+p {
+    font-size: 1.2em;
+    color: #080707;
+    margin-bottom: 30px;
+}
+/* Style général pour le formulaire de réservation */
+#reservationForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#reservationForm h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#reservationForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+#reservationForm select,
+#reservationForm input[type="date"],
+#reservationForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+#reservationForm button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#reservationForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Style spécifique pour la section "Options de Paiement Sécurisées" */
+#reservationForm h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+
+
+#reservationForm select[name="paiement"] {
+    border: 2px solid #007bff;
+    background-color: #f0f8ff;
+}
+
+/* Style des messages de confirmation */
+#confirmationMessage {
+    font-size: 16px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+    font-style: italic; /* Italique pour les témoignages */
+}
+
+.testimonial h4 {
+    font-size: 1em;
+    color: #007bff; /* Couleur pour le nom du client */
+    margin-top: 10px;
+}
+
+.testimonial:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02); /* Effet de zoom au survol */
+}
+
+@media (min-width: 768px) {
+    .testimonial-slider {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .testimonial {
+        flex: 1; /* Chaque témoignage prend un espace égal */
+        margin: 0 10px; /* Ajout d'espace entre les témoignages */
+    }
+}
+
+/* Effet de survol */
+.mission:hover, .values:hover, .history:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.social-icon {
+    font-size: 24px;
+    color: #000; /* Couleur par défaut, changez selon vos besoins */
+    text-decoration: none;
+}
+.social-icon:hover {
+    color: #007bff; /* Couleur au survol */
+}
+#accueil {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('jake-blucker-tMzCrBkM99Y-unsplash.jpg') no-repeat center center/cover;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#accueil h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    animation: slideInLeft 1s ease-out, glow 2s infinite alternate;
+}
+
+#accueil p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: slideInRight 1s ease-out;
+}
+
+/* Section Nos Voitures */
+#voitures {
+    background-color: var(--accent-color);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#voitures h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Conteneur des Voitures */
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Carte de Voiture */
+.car {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.car:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Image de Voiture avec Overlay */
+.car-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%; /* Ratio d'aspect 16:10 */
+    overflow: hidden;
+}
+
+.car-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.car:hover .car-image img {
+    transform: scale(1.1);
+}
+
+/* Overlay au survol */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.7);
+    color: #fff;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.car:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text h3 {
+    margin: 0 0 10px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+}
+
+.overlay-text p {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.overlay-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed);
+    font-family: 'Roboto', sans-serif;
+}
+
+.overlay-text .btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Section Services */
+#services {
+    background-color: var(--accent-color);
+}
+
+#services h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInUp 1s ease-out;
+}
+
+.service {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.service h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Formulaire de contact */
+#contact {
+    background-color: #fff;
+}
+
+#contact h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInUp 1s ease-out;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform var(--transition-speed);
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color var(--transition-speed);
+    font-family: 'Roboto', sans-serif;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+form button {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Pied de page */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+#services {
+    position: relative;
+    background-color: #fff; /* Couleur de fond de la section */
+    padding: 60px; /* Rembourrage autour du contenu */
+    border-radius: 10px; /* Coins arrondis pour un look doux */
+    text-align: center; /* Centrer le texte */
+    overflow: hidden; /* Empêche le débordement de l'effet */
+}
+
+.service {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid transparent; /* Bordure pour l'effet */
+    border-radius: 10px; /* Coins arrondis */
+    transition: border-color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.service:hover {
+    border: 2px solid transparent; /* Couleur de bordure transparente pour l'effet */
+    box-shadow: 
+        0 0 20px rgba(255, 0, 255, 0.8), /* Ombre néon rose */
+        0 0 40px rgba(0, 255, 0, 0.6), /* Ombre néon verte */
+        0 0 60px rgba(0, 0, 255, 0.6), /* Ombre néon bleue */
+        0 0 80px rgba(255, 255, 0, 0.6); /* Ombre néon jaune */
+}
+
+/* Animation de clignotement pour la section */
+@keyframes neon-flicker {
+    0% { opacity: 0.9; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
+}
+
+#services h2 {
+    color: #030e14; /* Couleur du titre */
+    animation: neon-flicker 1.5s infinite alternate; /* Animation de clignotement */
+    text-shadow: 
+        0 0 5px rgba(255, 0, 255, 0.8), /* Ombre rose */
+        0 0 10px rgba(0, 255, 0, 0.6), /* Ombre verte */
+        0 0 15px rgba(0, 0, 255, 0.6), /* Ombre bleue */
+        0 0 20px rgba(255, 255, 0, 0.6); /* Ombre jaune */
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+    }
+    to {
+        text-shadow: 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color);
+    }
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .car-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .car-image {
+        padding-bottom: 60%; /* Ajustement du ratio d'aspect */
+    }
+
+    .overlay-text h3 {
+        font-size: 1.2em;
+    }
+
+    .overlay-text p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    #accueil h2 {
+        font-size: 2em;
+    }
+
+    #accueil p {
+        font-size: 1em;
+    }
+
+    .service {
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .car-container {
+        grid-template-columns: 1fr;
+    }
+
+    .overlay-text h3 {
+        font-size: 1.1em;
+    }
+
+    .overlay-text p {
+        font-size: 0.85em;
+    }
+}
