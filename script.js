@@ -54,3 +54,16 @@ function showNextTestimonial() {
 }
 
 setInterval(showNextTestimonial, 5000); // Afficher le prochain témoignage toutes les 5 secondes
+let lastScrollY = window.scrollY;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > lastScrollY) {
+    // Si on descend ⬇, cacher le header
+    header.classList.add("hidden");
+  } else {
+    // Si on monte ⬆, afficher le header
+    header.classList.remove("hidden");
+  }
+  lastScrollY = window.scrollY;
+});
